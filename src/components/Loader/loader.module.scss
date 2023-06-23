@@ -1,0 +1,11 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  .loading_text {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}

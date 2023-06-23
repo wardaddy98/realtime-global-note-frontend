@@ -1,0 +1,12 @@
+:root {
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --primary: #e3f6f5;
+  --secondary: #ffd803;
+  --text: #272343;
+  --white: #fffffe;
+  --tertiary: #bae8e8;
+}
+
+body {
+  color: var(--text);
+}

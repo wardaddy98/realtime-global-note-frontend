@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  .select {
+    width: 140px;
+  }
+
+  .input {
+    width: 200px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .input {
+      width: 300px;
+    }
+
+    .select {
+      width: 180px;
+    }
+  }
+}

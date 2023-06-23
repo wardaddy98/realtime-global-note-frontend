@@ -1,0 +1,11 @@
+.card {
+  margin-top: 2rem;
+  background-color: var(--primary);
+
+  .submit_wrapper {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

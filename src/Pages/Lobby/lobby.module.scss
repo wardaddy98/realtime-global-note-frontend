@@ -1,0 +1,35 @@
+.wrapper {
+  margin: 1rem;
+
+  @media screen and (min-width: 800px) {
+    margin: 1rem 2rem;
+  }
+
+  .top_section {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+
+    .first {
+      justify-self: flex-start;
+    }
+
+    .second {
+      justify-self: flex-end;
+    }
+  }
+
+  .notes_wrapper {
+    margin-top: 2rem;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.load_more_wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
