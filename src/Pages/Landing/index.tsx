@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader';
 import { useLazyGetAllUsersQuery } from '../../redux/auth/auth.service';
-import { selectAllUsers, setCurrentUser } from '../../redux/auth/auth.slice';
+import { selectAllUsers, setCurrentUser, setUsers } from '../../redux/auth/auth.slice';
 import { socketInstance } from '../../socket/socketInit';
 import { localStorageUtil } from '../../utils/common.utils';
 import styles from './landing.module.scss';
@@ -46,11 +46,14 @@ const UserCard = (props: IUserCard) => {
   const { user } = props;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const users = useSelector(selectAllUsers);
 
   const handleUserClick = () => {
     if (user?.isOnline) return;
     localStorageUtil.setItem('currentUserId', user._id);
-    dispatch(setCurrentUser(user));
+    dispatch(setCurrentUser({ ...user, isOnline: true }));
+    const updatedUsers = [...users].map(e => (e?._id === user?._id ? { ...e, isOnline: true } : e));
+    dispatch(setUsers(updatedUsers));
     navigate('/lobby', { replace: true });
     socketInstance.emit('subscribe', user?._id ?? '');
   };
